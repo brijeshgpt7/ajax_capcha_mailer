@@ -1,0 +1,23 @@
+
+<h1>Listing Users</h1>
+<table border=2 >
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>email name</th>
+      <th>Addresss</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |bank| %>
+    <tr>
+      <td><%= bank.first_name %></td>
+      <td><%= bank.last_name %></td>
+      <td><%= bank.email %></td>
+      <td><%= bank.address %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

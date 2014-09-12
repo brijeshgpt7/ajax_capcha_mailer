@@ -1,0 +1,19 @@
+<div style="float:right; margin-right: 339px;
+">
+<%#= button_to 'New User', new_product_path ,:method => :get%>
+<button type="button" class='mybutton' >Click Me!</button> 
+<div id ="mybutton"></div>
+</div>
+<div id="my_index">
+	<%= render "index"%>
+</div>
+<br>
+<%#= link_to 'GO back', banks_url %>
+<script>
+$('.mybutton').click(function(){
+	$.ajax({ 
+		type : 'GET',
+		url : 'products/new'
+	});
+});
+</script>

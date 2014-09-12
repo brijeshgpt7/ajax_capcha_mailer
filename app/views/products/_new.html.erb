@@ -1,0 +1,85 @@
+<script src = "http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.js"/>
+<div id="my_form">
+  <%= form_for @product, :remote => true  do |f| %>
+  <div class="field">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+    <div>
+<label for="product_first_name" class="error" id="product_first_name-error"></label></div>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+    <div><label id="product_last_name-error" class="error" for="product_last_name"></label></div>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+    <div><label id="product_email-error" class="error" for="product_email"></label></div>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+    <div><label id="product_address-error" class="error" for="product_address"></label></div>
+  </div>
+  <div class="actions">
+    <%= f.submit 'submit',:id=>"mysubmit"%>
+  </div>
+  <% end %>
+</div>
+<script type="text/javascript">
+  $(function(){
+    ignore[],
+$('#mysubmit').click(function(){
+    $("#new_product").validate({
+      rules:{
+        'product[first_name]':
+          {
+          required: true
+        },
+        'product[last_name]':
+          {
+          required: true
+        },
+       
+        'product[email]':
+          {
+          required: true
+        },
+        'product[address]':
+          {
+          required: true
+        }
+      },
+      messages:{
+        'product[first_name]':
+          {
+          required:"Please enter first_name"
+        },
+        'product[last_name]':
+          {
+          required:"Please enter last_name"
+        },
+      
+        'product[email]':
+          {
+          required:"Please enter email"
+        },
+        'product[address]':
+          {
+          required:"Please select address"
+        }
+      }
+    });
+  });
+  });
+</script>
+<style type="text/css">
+.error{
+  color:#ff0000;
+  font-size:12px;
+}
+
+</style>
+
+
