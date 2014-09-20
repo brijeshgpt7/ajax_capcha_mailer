@@ -10,8 +10,9 @@
     <%= f.password_field :password, autocomplete: "off" %></div>
 
   <div><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
-
+    <%= f.password_field :password_confirmation, autocomplete: "off" %></div><br />
+    <%#= recaptcha_tags %>
+    <%= recaptcha_tags(display: {theme: 'blackglass'}, ajax: true) %><br />
   <div><%= f.submit "Sign up" %></div>
 <% end %>
 

@@ -13,15 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20140911064434) do
 
-  create_table "clients", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.text     "address"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "products", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"

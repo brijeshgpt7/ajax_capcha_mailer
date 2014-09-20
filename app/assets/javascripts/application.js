@@ -14,3 +14,13 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+    $(document).ajaxStart(function(){
+        $('#loading').show();
+    });
+$(document).ajaxComplete(function(){
+    $('#loading').hide();
+    });
+
+});
